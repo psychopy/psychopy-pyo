@@ -1,6 +1,6 @@
 # psychopy-pyo
 
-Extension for using [Pyo](http://ajaxsoundstudio.com/software/pyo/) for audio playback.
+Extension for using [Pyo](http://ajaxsoundstudio.com/software/pyo/) library for audio playback.
     
 ## Installing
 

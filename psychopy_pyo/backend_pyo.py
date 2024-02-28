@@ -275,7 +275,7 @@ class SoundPyo(_SoundBase):
 
     def __init__(self, value="C", secs=0.5, octave=4, stereo=True,
                  volume=1.0, loops=0, sampleRate=44100, bits=16,
-                 hamming=True, start=0, stop=-1,
+                 hamming=True, start=0, stop=-1, speaker=None,
                  name='', autoLog=True):
         """
         value: can be a number, string or an array:
@@ -342,7 +342,9 @@ class SoundPyo(_SoundBase):
                 "Cannot change sample rate to {} since audio server has "
                 "already started, using {} instead.".format(
                     sampleRate, actualSampleRate))
-
+        if hasattr(self, "_parseSpeaker"):
+            speaker = self._parseSpeaker(speaker)
+        self.speaker = speaker
         self.sampleRate = actualSampleRate
         self.format = bits
         self.isStereo = stereo
